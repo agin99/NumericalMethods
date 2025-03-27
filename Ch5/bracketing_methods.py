@@ -52,7 +52,7 @@ print(bisection(polynomial, 1, 0.5, 0.1))
 print(false_position(polynomial, 1, 0, 0.002), "\n")
 
 print("(5.8)")
-polynomial = [-np.sqrt(18), 1]
+polynomial = [-18, 0, 1]
 print(bisection(polynomial, 5, 4, 0.005))
 print(false_position(polynomial, 5, 4, 0.005), "\n")
 
