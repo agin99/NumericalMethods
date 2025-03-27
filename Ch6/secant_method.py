@@ -1,3 +1,19 @@
-import math
 import numpy as np
-import matplotlib.pyplot as plt
+
+def f(x):
+    return np.pow(np.e, -x) - x 
+
+def secant_method(x_0, x_i, e_s):
+    x_r = x_i - f(x_i)*(x_0 - x_i)/(f(x_0) - f(x_i))
+    e_a = 1
+    while True: 
+        x_0 = x_i
+        x_i = x_r
+        x_r = x_i - f(x_i)*(x_0 - x_i)/(f(x_0) - f(x_i))
+        e_a = abs(x_r - x_i) / x_r
+        if e_a < e_s:
+            return x_r, e_a
+        
+x_r, e_a = secant_method(0, 1.0, 10**(-6))
+print(f"Error: {e_a}")
+print(f"Root: {x_r}")
