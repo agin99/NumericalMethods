@@ -1,7 +1,4 @@
-import math
-import numpy as np
 import matplotlib.pyplot as plt
-from poly_ops import poly_mul
 
 def f(x):
     return x**3 - 5*x**2 + 7*x - 3
