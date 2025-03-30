@@ -26,6 +26,12 @@ def poly_div(p1, p2):
             poly_result[index_1 - index_2] = component_mul
     return poly_result, p1[:len(p2)]
 
+def evaluate_poly(poly, x):
+    poly_sum = 0
+    for index, i in enumerate(poly):
+        poly_sum += i*x**index
+    return poly_sum
+
 def format_poly(poly):
     poly_string = []
     for index, i in enumerate(poly[::-1]):
