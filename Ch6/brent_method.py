@@ -14,7 +14,7 @@ def iqi_root_finder(x1, y1, x2, y2, x3, y3, e_s, max_it):
     prev_x_r = x3
     e_a = 1
     it_tracker = 0
-    while True:
+    while it_tracker < max_it:
         norm_poly = quadratic_interpolation(x1, y1, x2, y2, x3, y3)
         iqi_poly = quadratic_interpolation(y1, x1, y2, x2, y3, x3)
         # x1 = evaluate_poly(iqi_poly, y1)
@@ -29,18 +29,15 @@ def iqi_root_finder(x1, y1, x2, y2, x3, y3, e_s, max_it):
         x2, y2 = x3, y3
         x3, y3 = x_r, y_r
         e_a = abs((x_r - prev_x_r) / x_r)
-        if e_a < e_s or it_tracker == max_it:
+        if e_a < e_s or y3 == 0:
             return x_r, e_a
+        max_it += 1
         prev_x_r = x_r
 
 def brent_method():
     pass
 
-quadratic = quadratic_interpolation(1, 2, 2, 1, 4, 5)
-formatted_quadratic = ("").join(format_poly(quadratic))
-print(formatted_quadratic)
-inverse_quadratic = quadratic_interpolation(2, 1, 1, 2, 5, 4)
-formatted_inverse = ("").join(format_poly(inverse_quadratic))
-print(formatted_inverse)
-
 print(iqi_root_finder(1, 2, 2, 1, 4, 5, 1, 10))
+print(iqi_root_finder(1, -3, 2, 0, 3, 5, 0.0000000000001, 10))
+print(iqi_root_finder(1, -1, 1.5, 1.375, 2, 6, 0.000000000000000001, 10))
+print(iqi_root_finder(0, 1, 0.5, 0.3775825618903727161, 1, -0.4596976941318602825990633926, 0.00001, 10))
