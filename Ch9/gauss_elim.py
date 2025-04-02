@@ -1,4 +1,4 @@
-from mat_ops import mat_flatten, mat_construct, dot_prod
+from mat_ops import mat_flatten, dot_prod
 
 def fwd_elim(m, b):
     m_flat = mat_flatten(m)
@@ -25,12 +25,3 @@ def back_sub(upper_tri, b):
     for i in range(len(upper_tri), 0, -1):
         x[i-1] = (b[i-1] - dot_prod(x, upper_tri[i-1])) / upper_tri[i-1][i-1]
     return x
-
-m = [[3, -0.1, -0.2],
-       [0.1, 7, -0.3],
-       [0.3, -0.2, 10]]
-b = [7.85, -19.3, 71.4] 
-upper_tri, b_tri = fwd_elim(m, b)
-upper_tri = mat_construct(upper_tri, 3, 3)
-x = back_sub(upper_tri, b_tri)
-print(x)
