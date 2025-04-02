@@ -83,19 +83,3 @@ def cramer_solver(m, b):
         m_adj = mat_t(m_t)
         x.append(mat_det(m_adj)/D)
     return x
-
-mat1 = [[1, 0, 1], 
-        [0, 1, 0]]
-mat2 = [[2, 1], 
-        [1, 2],
-        [1, 1]]
-mat_prod_1_2 = mat_mul(mat1, mat2)
-mat3 = [[0.3, 0.52, 1],
-        [0.5, 1, 1.9],
-        [0.1, 0.3, 0.5]]
-mat_det_3 = mat_det(mat3)
-mat_1_t = mat_t(mat1)
-mat_2_t = mat_t(mat2)
-
-b3 = [-0.01, 0.67, -0.44]
-print(cramer_solver(mat3, b3))
