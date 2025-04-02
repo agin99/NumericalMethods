@@ -1,3 +1,12 @@
+import numpy as np
+
+def quardatic(poly): 
+    r1 = poly[1] + np.sqrt(poly[1]**2 - 4*poly[0]*poly[1])
+    r2 = poly[1] - np.sqrt(poly[1]**2 - 4*poly[0]*poly[1])
+    return r1, r2
+
+def derivative(poly):
+    return [i*(index + 1) for index, i in enumerate(poly[1:])]
 
 def poly_mul(p1, p2):
     poly_result = []

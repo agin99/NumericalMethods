@@ -105,11 +105,3 @@ def bairstow_method(poly, r, s, e_s_r, e_s_s, max_it):
         del poly[-2:]
         iterations += 1
     return roots
-
-r = -1
-s = -1
-poly = [1.25, -3.875, 2.125, 2.75, -3.5, 1]
-e_s_r = 0.0001 
-e_s_s = 0.0001 
-
-print(bairstow_method(poly, r, s, e_s_r, e_s_s, 10))

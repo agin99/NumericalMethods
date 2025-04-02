@@ -13,7 +13,3 @@ def secant_method(x_0, x_i, e_s):
         e_a = abs(x_r - x_i) / x_r
         if e_a < e_s:
             return x_r, e_a
-        
-x_r, e_a = secant_method(0, 1.0, 10**(-6))
-print(f"Error: {e_a}")
-print(f"Root: {x_r}")

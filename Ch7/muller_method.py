@@ -36,11 +36,3 @@ def comp_root(poly, x0, x1, x2, es, max_it):
         x2, y2 = x_r, evaluate_poly(poly, x_r)
         iterat += 1
     return x_r, e_a
-
-poly = [-12, -13, 0, 1]
-x0 = 4.5
-x1 = 5.5 
-x2 = 5
-x_r, e_a = comp_root(poly, x0, x1, x2, 0.00001, 10)
-print(f"Root: {x_r}")
-print(f"Error: {e_a}")

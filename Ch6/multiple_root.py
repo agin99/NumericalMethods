@@ -19,8 +19,3 @@ def newton_raphson(x, e_s):
         if e_a < e_s:
             return x_i, e_a
         x_0 = x_i
-
-x_r, e_a = newton_raphson(0, 10**(-5))
-print(x_r)
-x_r, e_a = newton_raphson(4, 10**(-5))
-print(x_r)
