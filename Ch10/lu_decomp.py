@@ -80,13 +80,3 @@ def mat_inverse(l_tri, u_tri):
         inv.append(x)
     inv = mat_t(inv)
     return inv
-
-m = [[3, -0.1, -0.2],
-     [0.1, 7, -0.3],
-     [0.3, -0.2, 10]]
-b = [7.85, -19.3, 71.4]
-
-u_tri, l_tri = lu_decomp(m)
-u_tri_constr = mat_construct(u_tri, len(m), len(m[0]))
-l_tri_constr = mat_construct(l_tri, len(m), len(m[0]))
-m_inv = mat_inverse(l_tri_constr, u_tri_constr)
