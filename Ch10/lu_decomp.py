@@ -1,3 +1,4 @@
+import numpy as np
 
 def dot_prod(v1, v2): 
     return sum([i*j for i, j in zip(v1, v2)])
@@ -64,7 +65,7 @@ def fwd_sub(l_tri, b):
     return x
 
 def back_sub(u_tri, y):
-    x = [0]*len(b)
+    x = [0]*len(y)
     for i in range(len(u_tri), 0, -1):
         x[i-1] = (y[i-1] - dot_prod(x, u_tri[i-1])) / u_tri[i-1][i-1]
     return x
@@ -74,9 +75,22 @@ def mat_inverse(l_tri, u_tri):
     for i in range(len(l_tri)):
         b = [0 for i in range(len(l_tri))]
         b[i] = 1
-        print(b)
         y = fwd_sub(l_tri, b)
         x = back_sub(u_tri, y)
         inv.append(x)
     inv = mat_t(inv)
     return inv
+
+def m_normalize(m):
+    for index, i in enumerate(m):
+        factor = 1/max(i)
+        m[index] = [j*factor for j in m[index]]
+    return m
+
+def mat_condition_num(m, m_inv):
+    m_norm = 0
+    m_inv_norm = 0
+    for i in range(len(m)):
+        m_norm += sum([j**2 for j in m[i]])
+        m_inv_norm += sum([k**2 for k in m_inv[i]])
+    return np.sqrt(m_norm) * np.sqrt(m_inv_norm) 
