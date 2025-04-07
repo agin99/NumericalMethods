@@ -91,11 +91,9 @@ def bairstow_method(poly, r, s, e_s_r, e_s_s, max_it):
             roots.append(x1)
             roots.append(x2)
             return roots
-            # return r, s, r1, r2
         elif len(poly) - 1 == 1:
             roots.append([-poly[0]/poly[1], 0])
             return roots
-            # return r, s, -s/r
         r, s = bairstow_root_finder(poly, r, s, e_s_r, e_s_s, max_it)
         x1, x2 = handle_root(r, s)
         roots.append(x1)

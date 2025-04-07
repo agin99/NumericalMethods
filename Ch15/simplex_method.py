@@ -62,7 +62,6 @@ def sort_solution(final_labels, B):
         if 'x' in i: 
             new_B.append(B[index])
     return new_B
-    
 
 M = [[7, 11],
      [10, 8],
