@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-import numpy as np
 
 def linear_interp(x0, x1, y0, y1, x): 
     return y0 + (y1 - y0) / (x1 - x0) * (x - x0) 
@@ -41,11 +39,17 @@ def newtons_interp(xi, yi, x, order):
     e = None 
     if order + 1 < len(b):
         e = compute_error(order, xi, x, b)    
-    return f, e
+    return f, e    
 
 x = 2
 xi = [1, 4, 6, 5]
 yi = [0, 1.386294, 1.791759, 1.609438]
 order = 3
+f, e = newtons_interp(xi, yi, x, order)
+
+x = 2
+xi = [1, 4, 6, 5, 3, 1.5, 2.5, 3.5]
+yi = [0, 1.3862944, 1.7917595, 1.6094379, 1.0986123, 0.4054641, 0.9162907, 1.2527630]
+order = 6
 f, e = newtons_interp(xi, yi, x, order)
 print(f"f({x}) = {f} with order {order} err = {e}")
