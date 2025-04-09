@@ -48,7 +48,7 @@ def brents_method(xl, xu, tol, max_it):
             return x1, f(x1)
         xl, xu = single_it_golden_search(x1, x2)
         iterations += 1
-    return x, f_x
+    return x, f(x)
 
 x, f_x = brents_method(0, 4, 10**(-5), 5)
 print(f"f({x:.5f}) = {f_x:5f}")

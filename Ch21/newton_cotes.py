@@ -104,7 +104,6 @@ def unequal_segment_general(func, xi):
     for i in segments:
         a = i[0]
         b = i[-1]
-        print(i)
         if len(i) == 2: 
             I += trapezoidal(len(i) - 1, func, a, b)
         else:

@@ -84,8 +84,6 @@ def bairstow_method(poly, r, s, e_s_r, e_s_s, max_it):
     iterations = 0
     roots = []
     while iterations < max_it:
-        print(roots)
-        print(f"Poly: {poly} {len(poly) - 1} r: {r} s:{s}")
         if len(poly) - 1 == 2:
             x1, x2 = handle_root(poly[1], poly[0])
             roots.append(x1)
