@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 def eulers_method(step_size, xi, xf, yi, f_prime): 
     y = []
