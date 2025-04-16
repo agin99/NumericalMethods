@@ -1,5 +1,4 @@
 import numpy as np
-from poly_comp import evaluate_poly
 
 def poly_mul(p1, p2):
     poly_result = []

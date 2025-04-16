@@ -1,5 +1,4 @@
 import numpy as np
-from eulers_method import eulers_method
 
 def one_step_euler(step_size, xi, yi, f_prime): 
     y = []
