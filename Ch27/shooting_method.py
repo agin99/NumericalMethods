@@ -1,4 +1,3 @@
-import bisect
 import numpy as np
 
 def compute_k_vals(funcs, xi, yi, step_size):
